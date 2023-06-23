@@ -1,16 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
 
 function App() {
-  let data="Pranjali Shinde"
-  function apple()
+  const [data,setData]=useState("Pranju")
+  function updateData()
   {
-    alert("Function Called");
+    setData("Shinde")
   }
   return (
     <div className="App">
       <h1>{data}</h1>
-      <button onClick={apple}>Click Me</button>
+      <button onClick={updateData}>Update Data</button>
       
     </div>
   );
