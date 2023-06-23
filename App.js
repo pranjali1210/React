@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import Jsxdemo from './Jsxdemo';
+
 function App() {
+  let data="Pranjali Shinde"
+  function apple()
+  {
+    alert("Function Called");
+  }
   return (
     <div className="App">
-      <h1> Hello World</h1>
-      <Jsxdemo />
+      <h1>{data}</h1>
+      <button onClick={apple}>Click Me</button>
       
     </div>
   );
