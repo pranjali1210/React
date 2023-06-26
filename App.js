@@ -1,19 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
-class App extends React.Component{
-  constructor()
-  {
-    super()
-    this.state={
-      data:"Pranjali"
-    }
-  }
-  render()
-  {
-    return(
-      <h1>Hello World !! {this.state.data}</h1>
-    )
-  }
+import Render from './Render';
+import React, {useState} from 'react';
+
+function App()
+{
+  const [name,setName]=useState("Pranjali")
+  return(
+    <div>
+      <h1>Render Life cycle</h1>
+      <Render name={name}/> 
+      <button onClick={()=>setName("Asha")}>Update Name</button>
+    </div>
+  )
 }
 export default App
