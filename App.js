@@ -1,21 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import PassF from './PassF';
-import Members from './Members';
-function App()
-{
-  function getData()
+import React from 'react';
+class App extends React.Component{
+  constructor()
   {
-    alert("Hello from App")
+    super()
+    this.state={
+      data:"Pranjali"
+    }
   }
-  return(
-    <div className='App'>
-      <PassF data={getData}/>
-      <div style={{float:'right'}}>
-        <Members data={getData}/>
-      </div>
-    </div>
-  )
+  render()
+  {
+    return(
+      <h1>Hello World !! {this.state.data}</h1>
+    )
+  }
 }
-
 export default App
