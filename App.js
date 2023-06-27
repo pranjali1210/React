@@ -1,14 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import './style.css'
-import style from './custom.module.css'
+import React from 'react';
+import {Button,Alert} from 'react-bootstrap'
 function App()
 {
   return(
     <div className='App'>
-      <h1 className='primary'>Style type 1 in ReactJS</h1>
-      <h1 style={{color:"red",backgroundColor:"black"}}>Style type 2 in ReactJS</h1>
-      <h1 className={style.success}>Style type 3 in ReactJS</h1>
+      <h1>install bootstrap</h1>
+      {
+          <Alert variant="warning">
+            This is a warning alert—check it out!
+          </Alert>
+        
+      }
     </div>
   )
 }
