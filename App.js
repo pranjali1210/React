@@ -1,16 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Render from './Render';
-import React, {useState} from 'react';
-
+import React,{useState} from 'react';
 function App()
 {
-  const [name,setName]=useState("Pranjali")
+  const [data,setData]=useState("Asha")
   return(
-    <div>
-      <h1>Render Life cycle</h1>
-      <Render name={name}/> 
-      <button onClick={()=>setName("Asha")}>Update Name</button>
+    <div className='App'>
+      <h1>Hello {data}</h1>
+      <button onClick={()=>setData("Pranjali")}>Update Name</button>
     </div>
   )
 }
