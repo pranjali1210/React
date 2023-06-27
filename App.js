@@ -1,18 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
-import {Button,Alert} from 'react-bootstrap'
-function App()
-{
-  return(
+function App() {
+  const students=[
+    {name:"Pranjali",email:"pranju@gmail.com",phone:8745343563},
+    {name:"Asha",email:"asha@gmail.com",phone:955743563},
+    {name:"Sujal",email:"sujal@gmail.com",phone:765343563}
+  ]
+  return (
     <div className='App'>
-      <h1>install bootstrap</h1>
+      <h1>Handle Array with List</h1>
+      <table border="1">
+      <tr>
+            <td>name</td>
+            <td>email</td>
+            <td>phone</td>
+          </tr>
       {
-          <Alert variant="warning">
-            This is a warning alert—check it out!
-          </Alert>
+        
+        students.map((i) =>
+          <tr>
+            <td>{i.name}</td>
+            <td>{i.email}</td>
+            <td>{i.phone}</td>
+          </tr>
+        )
         
       }
+      </table>
+
     </div>
   )
 }
