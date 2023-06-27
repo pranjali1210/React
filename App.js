@@ -1,18 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import New from './New';
-import React, {useEffect,useState} from 'react';
+import './style.css'
+import style from './custom.module.css'
 function App()
 {
-  const [data,setData]=useState(10)
-  const[count,setCount]=useState(100)
- 
   return(
     <div className='App'>
-      
-      <New count={count} data={data}/>
-      <button onClick={()=>setCount(count+1)}>Update Counter</button>
-      <button onClick={()=>setData(data+1)}>Update Data</button>
+      <h1 className='primary'>Style type 1 in ReactJS</h1>
+      <h1 style={{color:"red",backgroundColor:"black"}}>Style type 2 in ReactJS</h1>
+      <h1 className={style.success}>Style type 3 in ReactJS</h1>
     </div>
   )
 }
