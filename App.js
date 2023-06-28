@@ -43,14 +43,16 @@ function App() {
       <Table variant='dark' striped>
         <tbody>
           <tr>
+            <td>Sr.No</td>
             <td>Name</td>
             <td>Email</td>
             <td>Address</td>
           </tr>
 
           {
-            students.map((item) =>
+            students.map((item,i) =>
               <tr>
+                <td>{i+1}</td>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td>
