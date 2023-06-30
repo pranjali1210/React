@@ -1,87 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import Reusecomp from './Reusecomp';
 function App() {
-  const students = [
+  const users = [
     {
-      name: "Pranjali", email: "pranju@gmail.com", address: [
-        { hn: "10", city: "Noida", country: "India" },
-        { hn: "34", city: "Gurgaon", country: "India" },
-        { hn: "43", city: "Delhi", country: "India" },
-        { hn: "90", city: "Noida", country: "India" }
-      ]
+      name:"Anil", email:"anil23@gmail.com",contact:111
     },
     {
-      name: "Asha", email: "asha@gmail.com", address: [
-        { hn: "10", city: "Noida", country: "India" },
-        { hn: "34", city: "Gurgaon", country: "India" },
-        { hn: "43", city: "Delhi", country: "India" },
-        { hn: "90", city: "Noida", country: "India" }
-      ]
+      name:"Neeta", email:"neeta65@gmail.com",contact:222
     },
     {
-      name: "Sujal", email: "sujal@gmail.com", address: [
-        { hn: "10", city: "Noida", country: "India" },
-        { hn: "34", city: "Gurgaon", country: "India" },
-        { hn: "43", city: "Delhi", country: "India" },
-        { hn: "90", city: "Noida", country: "India" }
-      ]
+      name:"Asha", email:"ashashinde34@gmail.com",contact:333
     },
     {
-      name: "Soham", email: "soham@gmail.com", address: [
-        { hn: "10", city: "Noida", country: "India" },
-        { hn: "34", city: "Gurgaon", country: "India" },
-        { hn: "43", city: "Delhi", country: "India" },
-        { hn: "90", city: "Noida", country: "India" }
-      ]
+      name:"Pranjali", email:"pranjali379@gmail.com",contact:444
     },
   ]
-  return (
+  return(
     <div className='App'>
-      <h1>List with Bootstrap Table</h1>
-      <Table variant='dark' striped>
-        <tbody>
-          <tr>
-            <td>Sr.No</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Address</td>
-          </tr>
-
-          {
-            students.map((item,i) =>
-              <tr>
-                <td>{i+1}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>
-                  <Table variant='dark' striped>
-                  <tr>
-                      <td>House No</td>
-                      <td>City</td>
-                      <td>Contact</td>
-                     </tr>
-                    {
-                      
-                      item.address.map((data) =>
-
-                        <tr>
-                          <td>{data.hn}</td>
-                          <td>{data.city}</td>
-                          <td>{data.country}</td>
-                        </tr>
-                      )
-                    
-                      }
-                      </Table>
-                </td>
-              </tr>
-            )
-          }
-        </tbody>
-      </Table>
-
+      <h1>Reuse component in Reactjs</h1>
+      {
+        users.map((item,i)=>
+        <Reusecomp data={item} />
+        )
+      }
     </div>
   )
 }
