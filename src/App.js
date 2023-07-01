@@ -1,19 +1,25 @@
 import './App.css';
-import React from 'react';
-import Parentchild from './Parentchild';
-function App() {
-  function parentAlert(data)
-    {
-        alert(data)
+import React, { PureComponent } from 'react';
+import User from './User'
+class App extends React.Component {
+  constructor()
+  {
+    super()
+    this.state={
+      count:1
     }
-  return(
-    <div className='App'>
-      <h1>
-        Lifting state up
-        <Parentchild alert={parentAlert}/>
-      </h1>
-    </div>
-  )
+  }
+  render()
+  {
+    return(
+      <div className='App'>
+        <User count={this.state.count}/>
+        <button onClick={()=>this.setState({count:1})}>
+        Update Count</button>
+      </div>
+    )
+  }
+  
   
 }
 export default App
