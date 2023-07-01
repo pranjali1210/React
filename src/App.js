@@ -1,25 +1,23 @@
 import './App.css';
-import React, { PureComponent } from 'react';
-import User from './User'
-class App extends React.Component {
-  constructor()
-  {
-    super()
-    this.state={
-      count:1
-    }
-  }
-  render()
-  {
-    return(
-      <div className='App'>
-        <User count={this.state.count}/>
-        <button onClick={()=>this.setState({count:1})}>
-        Update Count</button>
-      </div>
-    )
-  }
-  
-  
+import React, { useState, useMemo } from 'react';
+function App() {
+  const [count, setcount] = useState(0)
+  const [item, setItem] = useState(10)
+  const multiCountMemo = useMemo(function multiCount() {
+    console.warn("Multi count")
+    return count * 5
+  },[count])
+  return (
+    <div className='App'>
+      <h1>UseMemo Hook in React</h1>
+      <h2>Count : {count}</h2>
+      <h2>Item : {item}</h2>
+      <h2>{multiCountMemo}</h2>
+      <button onClick={() => setcount(count + 1)}>Update Count</button>
+
+      <button onClick={() => setItem(item * 10)}>Update Item</button>
+    </div>
+  )
 }
+
 export default App
