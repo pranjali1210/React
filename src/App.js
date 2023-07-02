@@ -1,28 +1,35 @@
 import './App.css';
-import React, { useRef } from 'react';
+import React, { useRef,useState } from 'react';
 function App() {
 
-  let inputRef=useRef(null)
-  let inputRef1=useRef(null)
-  
-
-  function submitform(e)
+return(
+  <div className='App'>
+    <h1>HOC</h1>
+    <HOCRed cmp={Counter}/>
+    <HOCGreen cmp={Counter}/>
+    <HOCBlue cmp={Counter}/>
+  </div>
+)  
+  function HOCRed(props)
   {
-    e.preventDefault()
-    console.warn("Input field 1 value" ,inputRef.current.value)
-    console.warn("Input field 2 value" ,inputRef1.current.value)
-    let input3=document.getElementById("input3").value
-    console.warn("Input field 3 value" ,input3)
+    return <h2 style={{backgroundColor:"red", width:100}}>Red<props.cmp /></h2>
   }
-  return (
-    <div className='App'>
-      <h1>Uncontrolled components</h1>
-      <form onSubmit={submitform}>   
-        <input ref={inputRef} type='text' /><br /><br />
-        <input ref={inputRef1} type='text' /><br /><br />
-        <input id="input3" type='text'/><br /><br />
-        <button >Submit</button>
-      </form>
+  function HOCGreen(props)
+  {
+    return <h2 style={{backgroundColor:"green", width:100}}>Green<props.cmp /></h2>
+  }
+  function HOCBlue(props)
+  {
+    return <h2 style={{backgroundColor:"blue", width:100}}> Blue<props.cmp /></h2>
+  }
+}
+function Counter()
+{
+  const [count,setCount]=useState(0)
+  return(
+    <div>
+      <h3>Count : {count}</h3>
+      <button onClick={()=>setCount(count+1)}>Update</button>
     </div>
   )
 }
