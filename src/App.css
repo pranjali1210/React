@@ -30,12 +30,13 @@ span{
   justify-content: right;
 }
 .navbarLink:hover{
-  color: red;
-  background-color: pink;
-  
-  
+  color: black;
   
 }
+/*.navbar .active{
+  color: skyblue;
+  background-color: palevioletred;
+}*/
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -54,7 +55,7 @@ span{
 }
 
 .App-link {
-  color: #61dafb;
+  color:purple;
 }
 
 @keyframes App-logo-spin {
