@@ -15,7 +15,8 @@ function NavBar()
             <li><NavLink 
             style={({isActive})=>{return {backgroundColor: isActive ?'green':'red'}}}
             className="navbarLink" to="/contact">Contact</NavLink></li>
-            
+            <li><NavLink style={({isActive})=>{return {backgroundColor: isActive ?'green':'red'}}} 
+            className="navbarLink" to="/filter">Filter</NavLink></li>
         </ul>
         </div>
     )
